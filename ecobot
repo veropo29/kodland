@@ -97,6 +97,11 @@ def send_password(message):
             password = gen_pass(10)
             bot.reply_to(message, "Вот твой пароль:" + password)
 
+@bot.message_handler(commands=['greenworld'])
+def send_greenworld(message):
+       with open("images/world.webp", 'rb') as f:
+              bot.send_photo(message.chat.id, f)
+
 @bot.message_handler(commands=['ecology'])
 def send_password(message):
             bot.reply_to(message, "Нужно беречь природу!")
